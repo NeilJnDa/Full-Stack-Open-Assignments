@@ -35,6 +35,7 @@ mongoose.connect(uri)
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('build'))
 app.use(middleware.requestLogger);
 
 // Require token to manipulate blogs or user info

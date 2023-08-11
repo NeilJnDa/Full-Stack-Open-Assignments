@@ -21,6 +21,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
+
+    const setDefaultAccount = () => {
+        setUsername("Kiwi");
+        setPassword("password");
+    }
   //Login
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -46,7 +51,7 @@ const Login = () => {
   return (
     //Log in page
     <div>
-      <h2>Log in to application</h2>
+      <h2>Log in to application</h2>    
       <Notification />
       <Form onSubmit={handleLogin}>
         <FormGroup>
@@ -72,7 +77,8 @@ const Login = () => {
         <Button variant="primary" id="login-submit" type="submit">
           login
         </Button>
-      </Form>
+    </Form>
+        <Button variant="secondary" onClick={setDefaultAccount} > Use Default Account </Button>
     </div>
   );
 };
